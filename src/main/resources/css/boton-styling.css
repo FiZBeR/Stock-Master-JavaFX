@@ -1,0 +1,27 @@
+/* Estilo básico del botón */
+.button {
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-text-fill: #4A618A; /* Color del texto */
+    -fx-border-color: transparent; /* Sin borde */
+    -fx-background-radius: 5px;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 14px;
+    -fx-position-shift: 0.1s;
+}
+
+/* Estilo de hover para mostrar la animación de la línea */
+.button::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Línea en la parte inferior del botón */
+    left: 0;
+    width: 0;
+    height: 2px; /* Grosor de la línea */
+    background-color: #4A618A; /* Color de la línea */
+    transition: width 0.4s ease; /* Duración de la animación */
+}
+
+/* Cuando se hace hover, la línea se extiende */
+.button:hover::after {
+    width: 100%; /* La línea se expande hasta el ancho completo */
+}

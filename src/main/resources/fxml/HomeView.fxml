@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="69.0" prefWidth="712.0" style="-fx-background-color: #4A628A;">
@@ -32,12 +31,42 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="209.0" style="-fx-background-color: #7AB2D3;">
                <children>
-                  <Button id="btHome" layoutX="53.0" layoutY="54.0" mnemonicParsing="false" text="Home" />
-                  <Button layoutX="53.0" layoutY="94.0" mnemonicParsing="false" text="Productos" />
-                  <Button layoutX="53.0" layoutY="174.0" mnemonicParsing="false" text="Más Vendidos" />
-                  <Button layoutX="52.0" layoutY="135.0" mnemonicParsing="false" text="Stock Bajo" />
-                  <Button layoutX="52.0" layoutY="209.0" mnemonicParsing="false" text="Proxi a Vencer" />
-                  <Button layoutX="14.0" layoutY="295.0" mnemonicParsing="false" text="Salir" />
+                  <Button id="btHome" layoutX="53.0" layoutY="54.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Home" />
+                  <Button layoutX="53.0" layoutY="94.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Productos" />
+                  <Button layoutX="53.0" layoutY="174.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Más Vendidos" />
+                  <Button layoutX="52.0" layoutY="135.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Stock Bajo" />
+                  <Button layoutX="52.0" layoutY="209.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Proxi a Vencer" />
+                  <Button layoutX="14.0" layoutY="295.0" mnemonicParsing="false" stylesheets="@../css/styling.css" text="Salir" />
+                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="39.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-casa-30.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="39.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-carrito-de-compras-30.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="39.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-precio-bajo-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="39.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-crecimiento-de-las-acciones-30.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="39.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-caducado-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="5.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-salida-30.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="326.0" prefWidth="493.0" style="-fx-background-color: #DFF2EB;">
@@ -60,8 +89,8 @@
                       <TableColumn prefWidth="75.0" text="C2" />
                     </columns>
                   </TableView>
-                  <Button layoutX="248.0" layoutY="140.0" mnemonicParsing="false" text="Más...." />
-                  <Button layoutX="248.0" layoutY="301.0" mnemonicParsing="false" text="Más...." />
+                  <Button layoutX="248.0" layoutY="134.0" mnemonicParsing="false" stylesheets="@../css/boton-styling.css" text="Más...." />
+                  <Button layoutX="248.0" layoutY="294.0" mnemonicParsing="false" stylesheets="@../css/boton-styling.css" text="Más...." />
                </children>
             </AnchorPane>
         </items>
