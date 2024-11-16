@@ -6,26 +6,25 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.stockmaster.controlador.ProductosViewController">
    <children>
-      <Pane prefHeight="74.0" prefWidth="600.0" style="-fx-background-color: #133E87;">
+      <Pane prefHeight="74.0" prefWidth="800.0" style="-fx-background-color: #133E87;">
          <children>
-            <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" text="Crear" />
-            <Button layoutX="113.0" layoutY="25.0" mnemonicParsing="false" text="Eliminar" />
-            <Button layoutX="527.0" layoutY="25.0" mnemonicParsing="false" text="Buscar" />
-            <TextField layoutX="365.0" layoutY="25.0" promptText="Producto ID" />
+            <Button fx:id="btCrear" layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#create" text="Crear" />
+            <Button fx:id="btEliminar" layoutX="113.0" layoutY="25.0" mnemonicParsing="false" onAction="#delete" text="Eliminar" />
+            <Button fx:id="btBuscar" layoutX="527.0" layoutY="25.0" mnemonicParsing="false" onAction="#buscarID" text="Buscar" />
+            <TextField fx:id="lbId" layoutX="365.0" layoutY="25.0" promptText="Producto ID" />
          </children>
       </Pane>
-      <TableView layoutY="74.0" prefHeight="328.0" prefWidth="600.0" style="-fx-background-color: #F3F3E0;">
+      <TableView fx:id="tbProducts" layoutY="74.0" prefHeight="525.0" prefWidth="800.0" style="-fx-background-color: #F3F3E0;">
         <columns>
-          <TableColumn prefWidth="90.0" text="ID" />
-          <TableColumn prefWidth="100.0" text="Nombre" />
-            <TableColumn prefWidth="82.0" text="Cantidad" />
-            <TableColumn text="Costo" />
-            <TableColumn prefWidth="76.0" text="Valor" />
-            <TableColumn prefWidth="94.0" text="Fecha Ingreso" />
-            <TableColumn prefWidth="77.0" text="Disponible" />
+          <TableColumn fx:id="columnId" prefWidth="90.0" text="ID" />
+          <TableColumn fx:id="columNombre" prefWidth="100.0" text="Nombre" />
+            <TableColumn fx:id="columnCalidad" prefWidth="82.0" text="Cantidad" />
+            <TableColumn fx:id="columnCosto" text="Costo" />
+            <TableColumn fx:id="columnValor" prefWidth="76.0" text="Valor" />
+            <TableColumn fx:id="columnFechaDeIngreso" prefWidth="94.0" text="Fecha Ingreso" />
+            <TableColumn fx:id="columnDisponible" prefWidth="77.0" text="Disponible" />
         </columns>
       </TableView>
    </children>

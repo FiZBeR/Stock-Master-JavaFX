@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #F3F3E0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.stockmaster.controlador.ElectricaController">
+   <children>
+      <Pane layoutX="-4.0" prefHeight="77.0" prefWidth="807.0" style="-fx-background-color: #133E87;">
+         <children>
+            <Label layoutX="287.0" layoutY="24.0" text="Producto Electrico" textFill="#e4e4e4">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Label layoutX="151.0" layoutY="160.0" text="Id producto" />
+      <Label layoutX="151.0" layoutY="203.0" text="Nombre" />
+      <Label layoutX="151.0" layoutY="238.0" text="Cantidad" />
+      <Label layoutX="151.0" layoutY="272.0" text="Costo" />
+      <Label layoutX="151.0" layoutY="308.0" text="Valor" />
+      <Label layoutX="316.0" layoutY="270.0" />
+      <Label layoutX="416.0" layoutY="272.0" text="Proveedor" />
+      <Label layoutX="416.0" layoutY="238.0" text="Fecha Ingreso" />
+      <Label layoutX="416.0" layoutY="203.0" text="Disponible" />
+      <Label layoutX="416.0" layoutY="160.0" text="Descripcion" />
+      <ComboBox fx:id="cbProveedor" layoutX="508.0" layoutY="268.0" prefHeight="25.0" prefWidth="175.0" promptText="Proveedor" />
+      <Label layoutX="416.0" layoutY="308.0" text="Voltaje" />
+      <Label layoutX="412.0" layoutY="340.0" text="Consumo" />
+      <TextField fx:id="lbid" layoutX="230.0" layoutY="156.0" />
+      <TextField fx:id="lbNombre" layoutX="230.0" layoutY="199.0" />
+      <TextField fx:id="lbCantidad" layoutX="230.0" layoutY="234.0" />
+      <TextField fx:id="lbCosto" layoutX="230.0" layoutY="268.0" />
+      <TextField fx:id="lvValor" layoutX="230.0" layoutY="304.0" />
+      <TextField fx:id="lbDescripcion" layoutX="508.0" layoutY="156.0" />
+      <TextField fx:id="lbVoltaje" layoutX="508.0" layoutY="304.0" />
+      <TextField fx:id="lbConsumo" layoutX="508.0" layoutY="336.0" />
+      <Button fx:id="btCrear" layoutX="282.0" layoutY="369.0" mnemonicParsing="false" onAction="#crear" text="Crear" />
+      <TextField fx:id="lbDia" layoutX="508.0" layoutY="234.0" prefHeight="25.0" prefWidth="28.0" />
+      <TextField fx:id="lbMes" layoutX="569.0" layoutY="234.0" prefHeight="25.0" prefWidth="28.0" />
+      <TextField fx:id="lbanio" layoutX="629.0" layoutY="234.0" prefHeight="25.0" prefWidth="28.0" />
+      <Label layoutX="410.0" layoutY="373.0" prefHeight="17.0" prefWidth="103.0" text="Resistencia Al Agua" />
+      <RadioButton fx:id="rbYesDisponible" layoutX="508.0" layoutY="195.0" mnemonicParsing="false" text="Si" />
+      <RadioButton fx:id="rbNoDisponible" layoutX="580.0" layoutY="195.0" mnemonicParsing="false" text="No" />
+      <RadioButton fx:id="rbYesResistencia" layoutX="528.0" layoutY="373.0" mnemonicParsing="false" text="Si" />
+      <RadioButton fx:id="rbNoResistencia" layoutX="600.0" layoutY="373.0" mnemonicParsing="false" text="No" />
+      <Label layoutX="411.0" layoutY="398.0" text="ModeloCompatible" />
+      <TextField fx:id="lbCompativilidad" layoutX="538.0" layoutY="394.0" prefHeight="25.0" prefWidth="120.0" />
+   </children>
+</AnchorPane>

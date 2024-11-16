@@ -29,4 +29,9 @@ public class Dimensiones {
      */
     private double alto;
 
+    public Dimensiones(double largo, double ancho, double alto) {
+        this.largo = largo;
+        this.ancho = ancho;
+        this.alto = alto;
+    }
 }

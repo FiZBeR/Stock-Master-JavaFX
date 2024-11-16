@@ -33,6 +33,9 @@ public class Proveedor {
      */
     private String contacto_principal;
 
+    public Proveedor() {
+    }
+
     public Proveedor(String id_proveedor, String nombre, String direccion, String telefono, String contacto_principal) {
         this.id_proveedor = id_proveedor;
         this.nombre = nombre;

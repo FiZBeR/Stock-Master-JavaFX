@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #DFF2EB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.stockmaster.controlador.SelectProductsController">
+   <children>
+      <Pane prefHeight="79.0" prefWidth="800.0" style="-fx-background-color: #4A628A;">
+         <children>
+            <Label layoutX="235.0" layoutY="17.0" text="Selecciona el producto a crear" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btPere" layoutX="374.0" layoutY="183.0" mnemonicParsing="false" onAction="#viewProducto" text="Perecedero" />
+      <Button fx:id="btNoPere" layoutX="364.0" layoutY="241.0" mnemonicParsing="false" onAction="#viewNoPere" text="No Perecedero" />
+      <Button fx:id="btMecanica" layoutX="351.0" layoutY="288.0" mnemonicParsing="false" onAction="#viewMecanica" text="AutoParte Mecanica" />
+      <Button fx:id="btElectro" layoutX="355.0" layoutY="344.0" mnemonicParsing="false" onAction="#viewElectro" text="AutoParte Electrica" />
+      <Button fx:id="btCarroceria" layoutX="350.0" layoutY="408.0" mnemonicParsing="false" onAction="#viewCarroceria" text="AutoParte Carroceria" />
+   </children>
+</AnchorPane>

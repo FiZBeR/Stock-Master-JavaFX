@@ -28,6 +28,9 @@ public class Vendedor {
      */
     private int telefono;
 
+    public Vendedor() {
+    }
+
     public Vendedor(String id_vendedor, String nombre, String email, int telefono) {
         this.id_vendedor = id_vendedor;
         this.nombre = nombre;

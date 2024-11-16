@@ -28,6 +28,8 @@ public class Venta {
      */
     private int valor_total;
 
+    public Venta() {
+    }
 
     public Venta(String fecha_venta, int cantidad_vendida, Vendedor vendedor, int valor_total) {
         this.fecha_venta = fecha_venta;
