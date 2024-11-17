@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.poli.stockmaster.modelo.FechaIngreso;
+import co.edu.poli.stockmaster.modelo.Perecedero;
+import co.edu.poli.stockmaster.modelo.Proveedor;
+import co.edu.poli.stockmaster.modelo.Venta;
 import co.edu.poli.stockmaster.utilities.Paths;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +29,7 @@ public class PerecederoController {
     private URL location;
 
     @FXML
-    private ComboBox<?> cbProveedor;
+    private ComboBox<Proveedor> cbProveedor;
 
     @FXML
     private TextField lbCantidad;
@@ -58,7 +62,39 @@ public class PerecederoController {
     private Button btCrear;
 
     @FXML
+    private TextField lbDia;
+
+    @FXML
+    private TextField lbMes;
+
+    @FXML
+    private TextField lbAnio;
+
+    HomeViewController op = new HomeViewController();
+
+    @FXML
     void create(ActionEvent event) {
+
+        String id_producto = lbid.getText();
+        String nombre = lbNombre.getText();
+        int cantidad = Integer.parseInt(lbCantidad.getText());
+        int costo = Integer.parseInt(lbCosto.getText());
+        int valor = Integer.parseInt(lvValor.getText());
+        String descripcion = lbDescripcion.getText();
+        boolean disponible = true;
+        Venta[] listaVentas = new Venta[9];
+        FechaIngreso fecha = new FechaIngreso(Integer.parseInt(lbDia.getText()), Integer.parseInt(lbMes.getText()), Integer.parseInt(lbAnio.getText()));
+        Proveedor proveedor = new Proveedor();
+        int caducidad = 10;
+        String condicion = lbCondicion.getText();
+        String envase = lbEnvase.getText();
+
+        Perecedero productoUno = new Perecedero(id_producto, nombre, cantidad, costo, valor, descripcion,
+                disponible, listaVentas, fecha, proveedor, caducidad, condicion, envase);
+
+        op.agregarElemento(productoUno);
+
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PRINCIPAL));
             Parent nuevaVista = loader.load();

@@ -47,6 +47,6 @@
       <RadioButton fx:id="rbYesDisponible" layoutX="491.0" layoutY="220.0" mnemonicParsing="false" text="Si" />
       <RadioButton fx:id="rbNoDisponible" layoutX="563.0" layoutY="220.0" mnemonicParsing="false" text="No" />
       <Label layoutX="396.0" layoutY="398.0" text="Modelo Compatible" />
-      <TextField fx:id="lbCompativilidad" layoutX="523.0" layoutY="394.0" prefHeight="25.0" prefWidth="120.0" />
+      <TextField fx:id="lbCompatibilidad" layoutX="523.0" layoutY="394.0" prefHeight="25.0" prefWidth="120.0" />
    </children>
 </AnchorPane>

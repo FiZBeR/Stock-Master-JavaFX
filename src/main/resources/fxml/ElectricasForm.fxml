@@ -50,6 +50,6 @@
       <RadioButton fx:id="rbYesResistencia" layoutX="528.0" layoutY="373.0" mnemonicParsing="false" text="Si" />
       <RadioButton fx:id="rbNoResistencia" layoutX="600.0" layoutY="373.0" mnemonicParsing="false" text="No" />
       <Label layoutX="411.0" layoutY="398.0" text="ModeloCompatible" />
-      <TextField fx:id="lbCompativilidad" layoutX="538.0" layoutY="394.0" prefHeight="25.0" prefWidth="120.0" />
+      <TextField fx:id="lbCompatibilidad" layoutX="538.0" layoutY="394.0" prefHeight="25.0" prefWidth="120.0" />
    </children>
 </AnchorPane>

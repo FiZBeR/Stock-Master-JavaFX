@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.poli.stockmaster.modelo.*;
 import co.edu.poli.stockmaster.utilities.Paths;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,7 +25,7 @@ public class CarroceriaController {
     private URL location;
 
     @FXML
-    private ComboBox<?> cbProveedor;
+    private ComboBox<Proveedor> cbProveedor;
 
     @FXML
     private TextField lbAlto;
@@ -69,10 +70,38 @@ public class CarroceriaController {
     private TextField lvValor;
 
     @FXML
+    private TextField lbPeso;
+
+
+    @FXML
     private Button btCrear;
+
+    HomeViewController op = new HomeViewController();
 
     @FXML
     void create(ActionEvent event) {
+
+        String id_producto = lbid.getText();
+        String nombre = lbNombre.getText();
+        int cantidad = Integer.parseInt(lbCantidad.getText());
+        int costo = Integer.parseInt(lbCosto.getText());
+        int valor = Integer.parseInt(lvValor.getText());
+        String descripcion = lbDescripcion.getText();
+        boolean disponible = true;
+        Venta[] listaVentas = new Venta[9];
+        int dia = Integer.parseInt(lbDia.getText());
+        int mes = Integer.parseInt(lbMes.getText());
+        int anio = Integer.parseInt(lbanio.getText());
+        FechaIngreso fecha = new FechaIngreso(dia, mes, anio);
+        Proveedor proveedor = new Proveedor();
+        String color = lbColor.getText();
+        String material = lbEnvase.getText();
+        Dimensiones dimensiones = new Dimensiones(Double.parseDouble(lbAlto.getText()), Double.parseDouble(lbAncho.getText()), Double.parseDouble(lbAmplio.getText()));
+        double peso = Double.parseDouble(lbPeso.getText());
+        PartesCarroceria carroceriaUno = new PartesCarroceria(id_producto, nombre, cantidad, costo, valor, descripcion, disponible, listaVentas, fecha, proveedor, color, material, dimensiones, peso);
+
+        op.agregarElemento(carroceriaUno);
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PRINCIPAL));
             Parent nuevaVista = loader.load();

@@ -47,5 +47,7 @@
       <TextField fx:id="lbAlto" layoutX="491.0" layoutY="381.0" prefHeight="25.0" prefWidth="28.0" />
       <TextField fx:id="lbAncho" layoutX="552.0" layoutY="381.0" prefHeight="25.0" prefWidth="28.0" />
       <TextField fx:id="lbAmplio" layoutX="612.0" layoutY="381.0" prefHeight="25.0" prefWidth="28.0" />
+      <Label layoutX="393.0" layoutY="426.0" text="Peso" />
+      <TextField fx:id="lbPeso" layoutX="491.0" layoutY="422.0" />
    </children>
 </AnchorPane>

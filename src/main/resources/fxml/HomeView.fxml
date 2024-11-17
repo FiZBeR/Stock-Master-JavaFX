@@ -36,7 +36,7 @@
                   <Button fx:id="btViewMoreSells" layoutX="53.0" layoutY="174.0" mnemonicParsing="false" onAction="#viewSells" stylesheets="@../css/styling.css" text="Más Vendidos" />
                   <Button fx:id="btStockDwon" layoutX="52.0" layoutY="135.0" mnemonicParsing="false" onAction="#viewStock" stylesheets="@../css/styling.css" text="Stock Bajo" />
                   <Button fx:id="btVencer" layoutX="52.0" layoutY="209.0" mnemonicParsing="false" onAction="#viewVencer" stylesheets="@../css/styling.css" text="Proxi a Vencer" />
-                  <Button fx:id="btLogout" layoutX="14.0" layoutY="295.0" mnemonicParsing="false" onAction="#salir" stylesheets="@../css/styling.css" text="Salir" />
+                  <Button fx:id="btLogout" layoutX="29.0" layoutY="469.0" mnemonicParsing="false" onAction="#salir" stylesheets="@../css/styling.css" text="Salir" />
                   <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="39.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-casa-30.png" />
@@ -62,7 +62,7 @@
                         <Image url="@../images/icons8-caducado-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="5.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="19.0" layoutX="20.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-salida-30.png" />
                      </image>
@@ -73,24 +73,39 @@
                <children>
                   <TableView fx:id="tbvMoreSells" layoutX="18.0" layoutY="60.0" prefHeight="114.0" prefWidth="285.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Id" />
-                      <TableColumn prefWidth="75.0" text="Nombre" />
+                      <TableColumn fx:id="moreId" prefWidth="75.0" text="Id" />
+                      <TableColumn fx:id="moreNombre" prefWidth="75.0" text="Nombre" />
                     </columns>
                   </TableView>
                   <TableView fx:id="tbStockDown" layoutX="19.0" layoutY="283.0" prefHeight="114.0" prefWidth="285.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="Id" />
-                        <TableColumn prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="stockId" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="stockNombre" prefWidth="75.0" text="Nombre" />
                      </columns>
                   </TableView>
-                  <TableView fx:id="tbPartners" layoutX="365.0" layoutY="20.0" prefHeight="371.0" prefWidth="152.0">
+                  <TableView fx:id="tbPartners" layoutX="364.0" layoutY="60.0" prefHeight="371.0" prefWidth="152.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn fx:id="equiponombre" prefWidth="75.0" text="Nombre" />
+                      <TableColumn fx:id="equipoCodigo" prefWidth="75.0" text="Codigo" />
                     </columns>
                   </TableView>
                   <Button fx:id="btMoreSells" layoutX="246.0" layoutY="174.0" mnemonicParsing="false" onAction="#viewSells" stylesheets="@../css/boton-styling.css" text="Más...." />
                   <Button fx:id="btSockDown" layoutX="247.0" layoutY="397.0" mnemonicParsing="false" onAction="#viewStock" stylesheets="@../css/boton-styling.css" text="Más...." />
+                  <Label layoutX="95.0" layoutY="20.0" text="Mas Vendidos">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="106.0" layoutY="235.0" text="Stock Bajo">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="397.0" layoutY="20.0" text="Equipo">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </items>

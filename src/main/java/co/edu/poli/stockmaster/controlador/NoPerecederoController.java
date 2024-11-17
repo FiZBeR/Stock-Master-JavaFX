@@ -1,9 +1,7 @@
 package co.edu.poli.stockmaster.controlador;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
+import co.edu.poli.stockmaster.modelo.*;
+import co.edu.poli.stockmaster.utilities.Paths;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,20 +9,22 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class NoPerecederoController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
+    private Button btCrear;
 
     @FXML
     private ComboBox<?> cbProveedor;
+
+    @FXML
+    private TextField lbAnio;
 
     @FXML
     private TextField lbCantidad;
@@ -33,16 +33,19 @@ public class NoPerecederoController {
     private TextField lbCosto;
 
     @FXML
-    private DatePicker lbDate;
+    private TextField lbDescripcion;
 
     @FXML
-    private TextField lbDescripcion;
+    private TextField lbDia;
 
     @FXML
     private TextField lbDurabilidad;
 
     @FXML
     private TextField lbEnvase;
+
+    @FXML
+    private TextField lbMes;
 
     @FXML
     private TextField lbNombre;
@@ -54,12 +57,38 @@ public class NoPerecederoController {
     private TextField lvValor;
 
     @FXML
-    private Button btCrear;
+    private RadioButton rbNo;
+
+    @FXML
+    private RadioButton rbYes;
+
+    HomeViewController op = new HomeViewController();
 
     @FXML
     void create(ActionEvent event) {
+        String id_producto = lbid.getText();
+        String nombre = lbNombre.getText();
+        int cantidad = Integer.parseInt(lbCantidad.getText());
+        int costo = Integer.parseInt(lbCosto.getText());
+        int valor = Integer.parseInt(lvValor.getText());
+        String descripcion = lbDescripcion.getText();
+        boolean disponible = true;
+        Venta[] listaVentas = new Venta[9];
+        int dia = Integer.parseInt(lbDia.getText());
+        int mes = Integer.parseInt(lbMes.getText());
+        int anio = Integer.parseInt(lbAnio.getText());
+        FechaIngreso fecha = new FechaIngreso(dia, mes, anio);
+        Proveedor proveedor = new Proveedor();
+        int durabilidad = Integer.parseInt(lbDurabilidad.getText());
+        String envase = lbEnvase.getText();
+
+        NoPerecedero productoUno = new NoPerecedero(id_producto, nombre, cantidad, costo, valor, descripcion, disponible, listaVentas, fecha, proveedor, durabilidad, envase);
+
+        op.agregarElemento(productoUno);
+
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../../../../resources/fxml/HomeView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PRINCIPAL));
             Parent nuevaVista = loader.load();
 
             Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -70,18 +99,5 @@ public class NoPerecederoController {
             // También puedes mostrar un mensaje de alerta al usuario si es necesario
         }
     }
-    @FXML
-    void initialize() {
-        assert cbProveedor != null : "fx:id=\"cbProveedor\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbCantidad != null : "fx:id=\"lbCantidad\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbCosto != null : "fx:id=\"lbCosto\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbDate != null : "fx:id=\"lbDate\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbDescripcion != null : "fx:id=\"lbDescripcion\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbDurabilidad != null : "fx:id=\"lbDurabilidad\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbEnvase != null : "fx:id=\"lbEnvase\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbNombre != null : "fx:id=\"lbNombre\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lbid != null : "fx:id=\"lbid\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
-        assert lvValor != null : "fx:id=\"lvValor\" was not injected: check your FXML file 'NoPerecederosForm.fxml'.";
 
-    }
 }

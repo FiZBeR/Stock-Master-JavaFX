@@ -1,5 +1,6 @@
 package co.edu.poli.stockmaster.controlador;
 
+import co.edu.poli.stockmaster.modelo.*;
 import co.edu.poli.stockmaster.utilities.Paths;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +24,7 @@ public class MecanicaController {
     private TextField lbCantidad;
 
     @FXML
-    private TextField lbCompativilidad;
+    private TextField lbCompatibilidad;
 
     @FXML
     private TextField lbCosto;
@@ -64,8 +65,31 @@ public class MecanicaController {
     @FXML
     private Button btCrear;
 
+    HomeViewController op = new HomeViewController();
+
     @FXML
     void create(ActionEvent event) {
+        String id_producto = lbid.getText();
+        String nombre = lbNombre.getText();
+        int cantidad = Integer.parseInt(lbCantidad.getText());
+        int costo = Integer.parseInt(lbCosto.getText());
+        int valor = Integer.parseInt(lvValor.getText());
+        String descripcion = lbDescripcion.getText();
+        boolean disponible = true;
+        Venta[] listaVentas = new Venta[9];
+        int dia = Integer.parseInt(lbDia.getText());
+        int mes = Integer.parseInt(lbMes.getText());
+        int anio = Integer.parseInt(lbanio.getText());
+        FechaIngreso fecha = new FechaIngreso(dia, mes, anio);
+        Proveedor proveedor = new Proveedor();
+        String compatibilidad = lbCompatibilidad.getText();
+        String material = lbMaterial.getText();
+        double peso = Double.parseDouble(lbPeso.getText());
+
+        PartesMecanicas mecanicaUno = new PartesMecanicas(id_producto, nombre, cantidad, costo, valor, descripcion, disponible, listaVentas, fecha, proveedor, compatibilidad, material, peso);
+
+        op.agregarElemento(mecanicaUno);
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.VIEW_PRINCIPAL));
             Parent nuevaVista = loader.load();
@@ -84,7 +108,7 @@ public class MecanicaController {
         assert btCrear != null : "fx:id=\"btCrear\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
         assert cbProveedor != null : "fx:id=\"cbProveedor\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
         assert lbCantidad != null : "fx:id=\"lbCantidad\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
-        assert lbCompativilidad != null : "fx:id=\"lbCompativilidad\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
+        assert lbCompatibilidad != null : "fx:id=\"lbCompativilidad\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
         assert lbCosto != null : "fx:id=\"lbCosto\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
         assert lbDescripcion != null : "fx:id=\"lbDescripcion\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
         assert lbDia != null : "fx:id=\"lbDia\" was not injected: check your FXML file 'MecanicoFrom.fxml'.";
